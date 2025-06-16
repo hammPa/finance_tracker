@@ -7,7 +7,7 @@ export default function Header({ categories, getTotalExpenses, months, getMonthT
     <div className="bg-white rounded-lg shadow-sm border p-8 mb-8">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-semibold text-gray-900">Hello, Alex</h1>
+          <h1 className="text-3xl font-semibold text-gray-900">Hello, Hamm</h1>
           <p className="text-gray-600 mt-1">Track your monthly expenses</p>
         </div>
         <div className="flex items-center space-x-6">
