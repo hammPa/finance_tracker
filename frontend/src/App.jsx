@@ -24,7 +24,7 @@ const App = () => {
 
   // ambil data awal dari backend
   useEffect(() => {
-    fetch('http://localhost:5000/expenses')
+    fetch('https://8adc8ff7-39ea-4738-9f20-2eb4a0b259c1-00-2i9bhqgdhxpsp.pike.replit.dev/expenses')
       .then(res => res.json())
       .then(data => {
         // Pastikan amount selalu number
@@ -43,7 +43,7 @@ const App = () => {
   const handleAddExpense = () => {
     if (!newExpense.item || !newExpense.amount) return;
 
-    fetch('http://localhost:5000/expenses', {
+    fetch('https://8adc8ff7-39ea-4738-9f20-2eb4a0b259c1-00-2i9bhqgdhxpsp.pike.replit.dev/expenses', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...newExpense, amount: parseFloat(newExpense.amount), month: selectedMonth })
@@ -64,7 +64,7 @@ const App = () => {
       amount: parseFloat(updatedExpense.amount)
     };
 
-    fetch(`http://localhost:5000/expenses/${id}`, {
+    fetch(`https://8adc8ff7-39ea-4738-9f20-2eb4a0b259c1-00-2i9bhqgdhxpsp.pike.replit.dev/expenses/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(parsedExpense)
@@ -80,7 +80,7 @@ const App = () => {
 
 
   const handleDeleteExpense = (id) => {
-    fetch(`http://localhost:5000/expenses/${id}`, {
+    fetch(`https://8adc8ff7-39ea-4738-9f20-2eb4a0b259c1-00-2i9bhqgdhxpsp.pike.replit.dev/expenses/${id}`, {
       method: 'DELETE'
     })
     .then(() => {
