@@ -1,9 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-require('dotenv').config();
-const db = pgp(process.env.DATABASE_URL);
 
+require('dotenv').config();
+const pgp = require("pg-promise")();
+
+const db = pgp({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 app.use(cors());
 app.use(express.json());
